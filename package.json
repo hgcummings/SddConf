@@ -13,6 +13,7 @@
   "author": "hgcummings <npmjs@hgc.io> (http://hgc.io/)",
   "license": "CC0",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "request": "^2.55.0"
   }
 }

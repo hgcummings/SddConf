@@ -1,0 +1,18 @@
+{
+  "name": "sdd-schedule-test",
+  "version": "0.0.1",
+  "description": "SDD Conf schedule app",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:hgcummings/nodesddconf.git"
+  },
+  "author": "hgcummings <npmjs@hgc.io> (http://hgc.io/)",
+  "license": "CC0",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}

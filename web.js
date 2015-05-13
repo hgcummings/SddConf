@@ -1,22 +1,29 @@
 var express = require('express');
 var request = require('request');
+var schedule = require('./schedule.js');
 
 var app = express();
 
 app.get('/nexmo', function(req, res) {
-	console.log({ method: req.method, query: req.query, body: req.body });
-	res.send(200, 'Message received');
-	request.post({
-		uri: 'https://rest.nexmo.com/sms/json',
-		json: true,
-		body: {
-			api_key: process.env.API_KEY,
-			api_secret: process.env.API_SECRET,
-			from: req.query.to,
-			to: req.query.msisdn,
-			text: 'Hello there'
-		}		
-	})
+	res.status(200).send('Message received');
+	schedule.getNowNext(function(error, result) {
+		if (!error && (result[req.query.keyword])) {
+			console.log('Sending response...');
+			request.post({
+				uri: 'https://rest.nexmo.com/sms/json',
+				json: true,
+				body: {
+					api_key: process.env.API_KEY,
+					api_secret: process.env.API_SECRET,
+					from: req.query.to,
+					to: req.query.msisdn,
+					text: result[req.query.keyword]
+				}		
+			});
+		} else {
+			console.log(error, result);
+		}
+	});
 });
 
 var port = process.env.PORT || 5000;

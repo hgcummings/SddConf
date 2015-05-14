@@ -1,3 +1,5 @@
+'use strict';
+
 var request = require('request');
 var cheerio = require('cheerio');
 
@@ -19,7 +21,7 @@ module.exports.getNowNext = function(callback) {
 		});
 		
 		var upcoming, current = today;
-		while (upcoming = current.next('.timegroup')) {
+		while ((upcoming = current.next('.timegroup'))) {
 			var startTime = upcoming.find('.starttime').text();
 			if (startTime.length === '0:00'.length) {
 				startTime = '0' + startTime;

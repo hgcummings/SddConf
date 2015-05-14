@@ -1,3 +1,5 @@
+'use strict';
+
 var server = require('../server.js');
 var schedule = require('../schedule.js');
 var request = require('request');
@@ -29,9 +31,9 @@ describe('server', function() {
 	});
 	
 	it('should return an OK response to GET request to the nexmo endpoint', function(done) {
-		request.get('http://localhost:' + TEST_PORT + '/nexmo', function(error, response, body) {
+		request.get('http://localhost:' + TEST_PORT + '/nexmo', function(error, response) {
 			expect(response.statusCode).to.equal(200);
 			done();
 		});
 	});
-})
+});

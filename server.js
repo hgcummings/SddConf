@@ -1,10 +1,12 @@
+'use strict';
+
 var express = require('express');
 var request = require('request');
 var schedule = require('./schedule.js');
 
 var server;
 
-exports.start = function(port, callback) {
+exports.start = function(port, callback) {	
 	var app = express();
 	app.get('/nexmo', function(req, res) {
 		res.status(200).send('Message received');
@@ -33,4 +35,4 @@ exports.start = function(port, callback) {
 
 exports.stop = function(callback) {
 	server.close(callback);
-}
+};

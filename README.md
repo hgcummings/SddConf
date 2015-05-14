@@ -1,5 +1,6 @@
 # SDD Schedule App
 [![Build Status](https://travis-ci.org/hgcummings/SddConf.svg?branch=master)](https://travis-ci.org/hgcummings/SddConf)
+
 Example app demonstrating how to structure and test a node.js app, from a talk at SDD Conf 2015
 
 ### Prerequisites

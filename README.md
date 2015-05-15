@@ -24,7 +24,7 @@ Node.js
 
 ## Services used
 * [Heroku](https://dashboard.heroku.com/) hosting and git-based deployment
-* [Travis CI](https://travis-ci.org) build server
+* [Travis CI](https://travis-ci.org) build server (also see [Wercker](http://wercker.com/))
 * [nexmo](https://www.nexmo.com/) SMS API
 * GitHub, of course :)
 

@@ -5,6 +5,7 @@ Example app demonstrating how to structure and test a node.js app, from a talk a
 
 ### Prerequisites
 Node.js
+```npm install -g grunt-cli```
 
 ### Running the tests
 * Checkout the code
